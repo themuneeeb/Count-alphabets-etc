@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void countchar(string sen)
+{
+	int alphabets = 0, digits = 0, special = 0;
+	for (int i = 0; i < sen.length(); i++)
+	{
+		if (sen[i] >= 'A' && sen[i] <='Z' || sen[i] >= 'a' && sen[i] <= 'z')
+		{
+			alphabets++;
+		}
+		else if (sen[i] >= '1' && sen[i] <= '9')
+		{
+			digits++;
+		}
+		else
+			special++;
+	}
+	cout << "The number of alphabets in string are: " << alphabets << endl;
+	cout << "The number of digits in string are: " << digits << endl;
+	cout << " The number of special alphabets in string are:" << special << endl;
+}
+int main()
+{
+	string sentence;
+	cout << " Enter the sentence: " << endl;
+	getline(cin, sentence);
+	countchar(sentence);
+}
